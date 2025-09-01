@@ -1,19 +1,25 @@
 {
-  "name": "spelling-bee",
+  "name": "@jsklan/spelling-bee",
   "version": "1.0.0",
-  "description": "A simple clone of the NY Times Spelling Bee game for learning TypeScript",
-  "main": "dist/main.js",
+  "description": "A monorepo for Spelling Bee game packages",
+  "private": true,
   "scripts": {
-    "build": "tsc",
-    "start": "node dist/main.js",
-    "dev": "tsc && node dist/main.js",
-    "clean": "rm -rf dist"
+    "build": "pnpm -r build",
+    "dev:cli": "pnpm --filter @jsklan/spelling-bee-cli dev",
+    "dev:web": "pnpm --filter @jsklan/spelling-bee-web dev",
+    "clean": "pnpm -r clean",
+    "test": "pnpm -r test"
   },
-  "keywords": ["spelling", "game", "typescript", "cli"],
-  "author": "",
+  "keywords": ["spelling", "game", "typescript", "monorepo"],
+  "author": "jsklan",
   "license": "MIT",
   "devDependencies": {
     "@types/node": "^20.0.0",
     "typescript": "^5.0.0"
+  },
+  "pnpm": {
+    "overrides": {
+      "@types/node": "^20.0.0"
+    }
   }
 }

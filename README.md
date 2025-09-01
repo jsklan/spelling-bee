@@ -1,14 +1,28 @@
 # Spelling Bee
 
-A simple clone of the New York Times Spelling Bee game built with TypeScript. This project starts as a command-line application and is designed as a learning project for TypeScript development.
+A monorepo containing multiple packages for the Spelling Bee game built with TypeScript. This project includes both command-line and web interfaces, designed as a learning project for TypeScript development.
 
-## Getting Started
+## Packages
 
-### Prerequisites
+- **[@jsklan/spelling-bee-cli](./packages/cli)** - Command-line interface for the game
+- **[@jsklan/spelling-bee-web](./packages/web)** - Web interface (coming soon)
+
+## Quick Start
+
+### Using the Published CLI Package
+
+```bash
+npm install -g @jsklan/spelling-bee-cli
+spelling-bee
+```
+
+### Development Setup
+
+#### Prerequisites
 - Node.js (version 18 or higher)
 - pnpm (preferred package manager)
 
-### Installation
+#### Installation
 
 1. Clone this repository:
    ```bash
@@ -21,19 +35,14 @@ A simple clone of the New York Times Spelling Bee game built with TypeScript. Th
    pnpm install
    ```
 
-3. Build the project:
+3. Build all packages:
    ```bash
-   pnpm run build
+   pnpm build
    ```
 
-4. Run the game:
+4. Run the CLI in development mode:
    ```bash
-   pnpm run start
-   ```
-
-   Or for development (builds and runs in one command):
-   ```bash
-   pnpm run dev
+   pnpm dev:cli
    ```
 
 ## How to Play
@@ -65,19 +74,48 @@ Thanks for playing!
 ## Development
 
 ### Available Scripts
-- `pnpm run build` - Compile TypeScript to JavaScript
-- `pnpm run start` - Run the compiled game
-- `pnpm run dev` - Build and run in one command
-- `pnpm run clean` - Remove compiled files
+- `pnpm build` - Build all packages
+- `pnpm dev:cli` - Run CLI in development mode
+- `pnpm dev:web` - Run web app in development mode (when implemented)
+- `pnpm clean` - Clean all build artifacts
+- `pnpm test` - Run tests for all packages
 
-### Project Structure
+### Monorepo Structure
 ```
-src/
-├── main.ts          # Main CLI application
-dist/                # Compiled JavaScript (generated)
-package.json         # Project configuration
-tsconfig.json        # TypeScript configuration
+packages/
+├── cli/             # Command-line interface package
+│   ├── src/
+│   │   └── main.ts  # CLI application
+│   ├── dist/        # Compiled JavaScript
+│   └── package.json
+└── web/             # Web interface package (placeholder)
+    ├── src/
+    └── package.json
 ```
+
+## Publishing
+
+This project uses automated publishing via GitHub Actions. To release a new version:
+
+1. Create and push a version tag:
+   ```bash
+   git tag v1.0.1
+   git push origin v1.0.1
+   ```
+
+2. The GitHub workflow will automatically:
+   - Build all packages
+   - Run tests
+   - Update package versions
+   - Publish to npm
+
+### NPM Setup Required
+
+Before the first publish, you'll need to:
+1. Create an npm account
+2. Create an organization called `jsklan`
+3. Generate an npm token with publish permissions
+4. Add the token as `NPM_TOKEN` in your GitHub repository secrets
 
 ## Roadmap
 

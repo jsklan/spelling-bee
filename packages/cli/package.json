@@ -1,0 +1,33 @@
+{
+  "name": "@jsklan/spelling-bee-cli",
+  "version": "1.0.0",
+  "description": "Command-line interface for the Spelling Bee game",
+  "main": "dist/main.js",
+  "bin": {
+    "spelling-bee": "dist/main.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/main.js",
+    "dev": "tsc && node dist/main.js",
+    "clean": "rm -rf dist",
+    "test": "echo \"No tests yet\""
+  },
+  "keywords": ["spelling", "game", "typescript", "cli"],
+  "author": "jsklan",
+  "license": "MIT",
+  "files": [
+    "dist/**/*",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0"
+  }
+}

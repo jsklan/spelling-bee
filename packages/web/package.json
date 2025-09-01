@@ -1,0 +1,29 @@
+{
+  "name": "@jsklan/spelling-bee-web",
+  "version": "1.0.0",
+  "description": "Web interface for the Spelling Bee game",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "echo \"Web build not implemented yet\"",
+    "dev": "echo \"Web dev server not implemented yet\"",
+    "clean": "rm -rf dist",
+    "test": "echo \"No tests yet\""
+  },
+  "keywords": ["spelling", "game", "typescript", "web", "react"],
+  "author": "jsklan",
+  "license": "MIT",
+  "files": [
+    "dist/**/*",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0"
+  }
+}
